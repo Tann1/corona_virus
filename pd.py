@@ -16,10 +16,10 @@ unique_countries = list(dict.fromkeys(countries))
 pprint.pprint(unique_countries, indent = 4) #show the unique countries
 
 
-# nested loop to print all the total number of cases that happened in each country.
+# to find the total number of provinces to report corona virus in each country
 for country in unique_countries:
     total = 0
     for curr_country in countries:
         if curr_country == country:
             total += 1
-    print("{} cases in {}".format(total, country))
+    print("{} number of province(s) reported to have corona virus in {}".format(total, country))
