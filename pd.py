@@ -22,4 +22,4 @@ for country in unique_countries:
     for curr_country in countries:
         if curr_country == country:
             total += 1
-    print("{} number of province(s) reported to have corona virus in {}".format(total, country))
+    print("{} province(s) reported to have corona virus in {}".format(total, country))
