@@ -15,11 +15,10 @@ countries = data_set['Country'].tolist() # convert the dataframe of Country into
 unique_countries = list(dict.fromkeys(countries)) 
 pprint.pprint(unique_countries, indent = 4) #show the unique countries
 
-
+print(len(data_set.loc[data_set['Country'] == 'Mainland China']))
+print(sum(data_set['Confirmed'].tolist()))
 # to find the total number of provinces to report corona virus in each country
 for country in unique_countries:
-    total = 0
-    for curr_country in countries:
-        if curr_country == country:
-            total += 1
-    print("{} province(s) reported to have corona virus in {}".format(total, country))
+	provinces = data_set.loc[data_set['Country'] == country]
+	total = sum(provinces['Confirmed'].tolist())
+	print("{} province(s) reported to have corona virus in {} with {} total cases".format(len(provinces), country, total))
